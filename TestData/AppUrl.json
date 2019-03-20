@@ -1,0 +1,17 @@
+ { "Dev":{
+	
+	  "DevUrl":"http://www.way2automation.com/angularjs-protractor/banking/#/login"
+	 
+	
+	},
+	
+ "UAT" :{
+  
+       "UatUrl" : "http://www.way2automation.com/angularjs-protractor/banking/#/login"
+  
+  }
+  
+  
+  }
+  
+ 

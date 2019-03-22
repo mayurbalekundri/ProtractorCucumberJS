@@ -2,4 +2,4 @@
 .project
 .tern-project
 node_modules
-Results/Report.*
+Results

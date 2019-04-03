@@ -1,10 +1,10 @@
-var datatable = require('../pages/DataTable.js');
+var tab = require('../pages/DataTable.js');
 var HomePage = require('../Pages/HomePage.js');
 
 
 module.exports = function() {
  
-
+	var datatable = new tab();
   
    
    this.Given(/^Open \"([^\"]*)\" Website$/, function (SiteUrl) {
@@ -17,8 +17,8 @@ module.exports = function() {
 	  });
 
    this.Then(/^Get Office Name$/, function () {
-	 
-	   datatable.officeValue.getText().then(function(offnme){
+	   datatable.GetAge();
+	  /* datatable.officeValue.getText().then(function(offnme){
 		   
 			var distname = Array.from(new Set(offnme))
 			console.log(distname);
@@ -47,13 +47,15 @@ module.exports = function() {
 							
 			 })
 			
-		 });   
+		 });   */
 	   return browser.sleep(1000);
 	  });
    
    this.Then(/^Validate Age$/, function () {
-	//    console.log("First "+FirstOfficeAge);
-	//   console.log("Second "+SecondOfficeAge);
+	   
+	   console.log("I am Here 1 "+first);
+	   console.log("I am Here 2 "+second);
+	  
 	   return browser.sleep(1000);
 	  });
     

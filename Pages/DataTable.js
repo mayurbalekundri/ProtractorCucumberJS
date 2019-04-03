@@ -49,7 +49,47 @@ var DataTable = function () {
 	
 	};
 
+this.GetCellValue = function(First,Second,Third,Fourth,Fifth){
+		
+	var XLSX = require('xlsx');
+	   
+    // read the excel file
+    var workbook = XLSX.readFile('C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx');
+    
+    //get the sheet default name
+    var sheet_name = workbook.SheetNames[0];
+    var worksheet = workbook.Sheets[sheet_name];
+    var address_of_cell_1 = First;
+    var address_of_cell_2 = Second;
+    var address_of_cell_3 = Third;
+    var address_of_cell_4 = Fourth;
+    var address_of_cell_5 = Fifth;
+    
+    /* Find desired cell */
+    var cell_object1 = worksheet[address_of_cell_1];
+    var cell_object2 = worksheet[address_of_cell_2];
+    var cell_object3 = worksheet[address_of_cell_3];
+    var cell_object4 = worksheet[address_of_cell_4];
+    var cell_object5 = worksheet[address_of_cell_5];
+// 
+    /* Get the value */
+    global.cell_value1 = cell_object1.v;
+    global.cell_value2 = cell_object2.v;
+    global.cell_value3 = cell_object3.v;
+    global.cell_value4 = cell_object4.v;
+    var cell_value5 = cell_object5.v;
+  
+   
+   global.cell_value6= new Date((cell_value5 - (25567 + 1))*86400*1000);
+   
+    
+/*    console.log("***** First value *****:" + cell_value1);
+    console.log("***** Second value *****:" + cell_value2);*/
+    return browser.sleep(1000);
+		
+	};
+	
 };
-module.exports =DataTable;
+module.exports =new DataTable();
 
 

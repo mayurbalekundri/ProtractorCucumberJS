@@ -1,10 +1,13 @@
-var tab = require('../pages/DataTable.js');
+var datatable = require('../pages/DataTable.js');
 var HomePage = require('../Pages/HomePage.js');
+var Excel = require('exceljs');
+var wrkbook = new Excel.Workbook();
+var ExlSheetPath='C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx';
 
 
 module.exports = function() {
  
-	var datatable = new tab();
+
   
    
    this.Given(/^Open \"([^\"]*)\" Website$/, function (SiteUrl) {
@@ -17,8 +20,8 @@ module.exports = function() {
 	  });
 
    this.Then(/^Get Office Name$/, function () {
-	   datatable.GetAge();
-	  /* datatable.officeValue.getText().then(function(offnme){
+	 
+	   datatable.officeValue.getText().then(function(offnme){
 		   
 			var distname = Array.from(new Set(offnme))
 			console.log(distname);
@@ -47,16 +50,47 @@ module.exports = function() {
 							
 			 })
 			
-		 });   */
+		 });   
 	   return browser.sleep(1000);
 	  });
    
    this.Then(/^Validate Age$/, function () {
-	   
-	   console.log("I am Here 1 "+first);
-	   console.log("I am Here 2 "+second);
-	  
+	//    console.log("First "+FirstOfficeAge);
+	//   console.log("Second "+SecondOfficeAge);
 	   return browser.sleep(1000);
 	  });
+   
+   this.Then(/^Validate Fields$/, function () {
+		
+	  /* var XLSX = require('xlsx');
+	   
+	    // read the excel file
+	    var workbook = XLSX.readFile('C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx');
+	    
+	    //get the sheet default name
+	    var sheet_name = workbook.SheetNames[0];
+	    var worksheet = workbook.Sheets[sheet_name];
+	    var address_of_cell_1 = 'A2';
+	    var address_of_cell_2 = 'A3';
+	     Find desired cell 
+	    var cell_object1 = worksheet[address_of_cell_1];
+	    var cell_object2 = worksheet[address_of_cell_2];
+	// 
+	     Get the value 
+	    var cell_value1 = cell_object1.v;
+	    var cell_value2 = cell_object2.v;
+	    console.log("***** Cell value *****:" + cell_value1);
+	    console.log("***** Cell value *****:" + cell_value2);
+	//    return cell_value;
+	
+	*/	
+	       datatable.GetCellValue("A2","B2","C2","D2","E2");
+		   return browser.sleep(1000);
+		  });
+   
+      this.Then(/^Display Cell Value$/, function () {
+		    console.log(cell_value1+" | "+cell_value2+" | "+cell_value3+" | "+cell_value4+" | "+cell_value6);
+		    return browser.sleep(1000);
+		  });
     
 };

@@ -2,6 +2,7 @@ var datatable = require('../pages/DataTable.js');
 var HomePage = require('../Pages/HomePage.js');
 var Excel = require('exceljs');
 var wrkbook = new Excel.Workbook();
+var moment=require('moment');
 var ExlSheetPath='C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx';
 
 
@@ -87,9 +88,10 @@ module.exports = function() {
 	       datatable.GetCellValue("A2","B2","C2","D2","E2");
 		   return browser.sleep(1000);
 		  });
-   
+ 
       this.Then(/^Display Cell Value$/, function () {
-		    console.log(cell_value1+" | "+cell_value2+" | "+cell_value3+" | "+cell_value4+" | "+cell_value6);
+    	   	var dte=moment(cell_value6).format("DD/MMM/YYYY");
+		    console.log(cell_value1+" | "+cell_value2+" | "+cell_value3+" | "+cell_value4+" | "+dte);
 		    return browser.sleep(1000);
 		  });
     

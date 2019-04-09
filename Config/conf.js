@@ -18,11 +18,12 @@ exports.config = {
               'profile': {
                   'password_manager_enabled': false
               }
+   // 	args:["--headless"]
           }
       }
   },
   specs: [
-    '../Features/DataTable.feature'
+    '../Features/MgrLogin.feature'
   ],
   
   /*specs: [

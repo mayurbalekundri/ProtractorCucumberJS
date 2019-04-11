@@ -9,6 +9,7 @@ var EC = protractor.ExpectedConditions;
 var config;
 chai.use(chaiAsPromised);
 chai.use(require("chai-sorted"));
+chai.use(require("chai-smoothie"));
 global.expect = chai.expect;
 global.util = util;
 global.EC = EC;

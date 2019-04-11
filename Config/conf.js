@@ -3,7 +3,7 @@ var now = new Date();
 report_name = 'Report-' + now.getFullYear() + "-"+ (now.getMonth()+1) + "-" + now.getDate() +"-"+now.getHours()+"-"+now.getMinutes()+"-"+now.getSeconds();
 exports.config = {
 		directConnect : true,
-	seleniumAddress: 'http://localhost:4444/wd/hub',
+//	seleniumAddress: 'http://localhost:4444/wd/hub',
   //seleniumServerJar: '/usr/local/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.3.1.jar',
   //directConnect:true,
   getPageTimeout: 6000000,
@@ -23,7 +23,7 @@ exports.config = {
       }
   },
   specs: [
-    '../Features/MgrLogin.feature'
+    '../Features/CheckBox.feature'
   ],
   
   /*specs: [
@@ -32,7 +32,7 @@ exports.config = {
 
 //resultJsonOutputFile:'../Results/json/cucumber_report.json',
 cucumberOpts: {
-    require: ['../support/*.js','../StepDefination/*.js'],
+    require: ['../support/*.js','../StepDefination/CheckBoxStepDefn.js'],
     format:'json:../Results/json/cucumber_report.json',
  //   tags:"@SmokeTest,@FunctionalTest",
     //tags:false,

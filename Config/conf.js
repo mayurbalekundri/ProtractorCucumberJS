@@ -23,7 +23,7 @@ exports.config = {
       }
   },
   specs: [
-    '../Features/CheckBox.feature'
+    '../Features/DataTable.feature'
   ],
   
   /*specs: [
@@ -32,7 +32,7 @@ exports.config = {
 
 //resultJsonOutputFile:'../Results/json/cucumber_report.json',
 cucumberOpts: {
-    require: ['../support/*.js','../StepDefination/CheckBoxStepDefn.js'],
+    require: ['../support/*.js','../StepDefination/DataTableStepDefn.js'],
     format:'json:../Results/json/cucumber_report.json',
  //   tags:"@SmokeTest,@FunctionalTest",
     //tags:false,

@@ -4,9 +4,6 @@ var Excel = require('exceljs');
 var wrkbook = new Excel.Workbook();
 var moment=require('moment');
 var ExlSheetPath='C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx';
-var chai = require('chai');
-chai.use(require('chai-smoothie'));
-var expect = chai.expect;
 
 module.exports = function() {
  

@@ -9,7 +9,7 @@ Scenario: Validating Add Customer,Open Account,Search customer navigation
       Given Open "https://datatables.net/" Website
  #     Then Get Office Name
  #     Then Validate Age
-      Then Validate Fields
+ #     Then Validate Fields
       Then Display Cell Value
  
      

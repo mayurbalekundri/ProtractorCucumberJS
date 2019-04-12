@@ -12,6 +12,7 @@ module.exports = function() {
   
    
    this.Given(/^Open \"([^\"]*)\" Website$/, function (SiteUrl) {
+	   browser.ignoreSynchronization = true;
 	   browser.get(SiteUrl);
 	   browser.sleep(1000);
 	   datatable.ClickOnOfficeSort();
@@ -21,7 +22,7 @@ module.exports = function() {
 	  });
 
    this.Then(/^Get Office Name$/, function () {
-	 
+	   browser.ignoreSynchronization = true;
 	   datatable.officeValue.getText().then(function(offnme){
 		   
 			var distname = Array.from(new Set(offnme))

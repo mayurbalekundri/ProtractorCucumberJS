@@ -95,5 +95,59 @@ module.exports = function() {
 		    console.log(cell_value1+" | "+cell_value2+" | "+cell_value3+" | "+cell_value4+" | "+dte);
 		    return browser.sleep(1000);
 		  });
+      
+      this.Then(/^Check given date present in two dates$/, function () {
+    	  var HRMIN="1430";
+    	  var HR=HRMIN.substring(0,2);
+    	  console.log("Hour "+HR);
+    	  var MIN=HRMIN.substring(2,4);
+    	  console.log("Min "+MIN);
+    	  
+    	  /*var tdydate=new Date();
+    	  var frmtdydate=moment(tdydate).format("DD/MMM/YYYY HH:mm");
+    	  console.log(frmtdydate);*/
+    	
+    	  var D="2019-04-17";
+    	  var H=HR;
+    	  var M=MIN;
+    	  var CompDate=D+" "+H+":"+M;
+    	  var strdate=moment(CompDate);
+    	  var myDate = moment(strdate).format("YYYY-MM-DD HH:mm");
+    	  console.log("Dte "+myDate)
+    	 
+  
+    	 /* var DateAddedHR =moment(myDate).add('2','hours').format("MM-DD-YYYY HH:mm");
+    	  console.log("Hour Added "+DateAddedHR); */
+    	  var DateAddedHRMN =moment(myDate).add(40+(2*60),'minutes').format("YYYY-MM-DD HH:mm");
+    	  console.log("MIN Added "+DateAddedHRMN); 
+    	 var DateSub= moment(DateAddedHRMN).subtract(1, 'days').format("YYYY-MM-DD HH:mm"); 
+    	  console.log("Day sub "+DateSub); 
+    	  
+    	  //http://momentjs.com/guides/
+    //	  var d1 = "2019-04-17 14:30";
+    //	  var d2 = "2019-04-17 14:30";
+    	 
+    //	d1.should.equalDate(d2)
+    //	expect(d1).to.equalDate(d2)
+    //	assert.equalDate(d1, d2)
+    	  
+    	    /*var d1 = new Date("2019-04-16 14:30");
+    	    var d2 = new Date("2019-04-16 14:30");
+    	    var d3= new Date("2019-04-18 14:30");*/
+    	  
+    	var d1 = new Date(myDate);
+  	    var d2 = new Date(DateSub);
+  	    var d3= new Date(DateAddedHRMN);
+    	   
+    	 
+    //	d1.should.equalDate(d2)
+    //	expect(d1).to.equalDate(d2)
+    	expect(d1).to.withinDate(d2,d3);
+   // 	assert.equalDate(d1, d2)
+    	  
+    	 
+    	  return browser.sleep(1000);
+    	 
+		  });
     
 };

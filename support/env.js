@@ -9,10 +9,14 @@ var EC = protractor.ExpectedConditions;
 var config;
 chai.use(chaiAsPromised);
 chai.use(require("chai-sorted"));
-//chai.use(require("chai-smoothie"));
+chai.use(require('chai-datetime'));
+/*var assertArrays = require('chai-arrays');
+chai.use(assertArrays);*/
+
 global.expect = chai.expect;
 global.util = util;
 global.EC = EC;
 global.config = config;
 
 module.exports = configure;
+

@@ -6,12 +6,10 @@ Feature: Validating DataTable
  
 Scenario: Validating Add Customer,Open Account,Search customer navigation
        
+<<<<<<< Updated upstream
  #     Given Open "https://datatables.net/" Website
  #     Then Get Office Name
  #     Then Validate Age
  #      Then Validate Fields
  #      Then Display Cell Value
        Then Check given date present in two dates
-
-    
-  

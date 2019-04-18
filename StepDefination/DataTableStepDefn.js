@@ -1,16 +1,11 @@
 var datatable = require('../pages/DataTable.js');
 var HomePage = require('../Pages/HomePage.js');
-var Excel = require('exceljs');
-var wrkbook = new Excel.Workbook();
 var moment=require('moment');
 var ExlSheetPath='C:/Users/Mayur/CucumberTrainingWS/ProtractorCucumberJS/TestData/TestData.xlsx';
 
 
 module.exports = function() {
  
-
-  
-   
    this.Given(/^Open \"([^\"]*)\" Website$/, function (SiteUrl) {
 	   browser.ignoreSynchronization = true;
 	   browser.get(SiteUrl);
@@ -53,6 +48,9 @@ module.exports = function() {
 			 })
 			
 		 });   
+	 //  expect([1, 2, 3]).to.be.an('array').that.includes(3,4);
+	 //   expect([1, 2, 3]).to.include(2,1);
+	      expect([1, 2, 3]).to.include.members([2,3,1]);
 	   return browser.sleep(1000);
 	  });
    
